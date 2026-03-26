@@ -1,25 +1,24 @@
 package universite_Paris8.iut.qdev.tp2026.gr13.jeuQuizz.interfaces;
 
+import universite_Paris8.iut.qdev.tp2026.gr13.jeuQuizz.commons.dtos.ElementsPourUnePartieDTO;
+//import universite_Paris8.iut.qdev.tp2026.gr13.jeuQuizz.models.Partie;
+//import universite_Paris8.iut.qdev.tp2026.gr13.jeuQuizz.models.Question;
+//import universite_Paris8.iut.qdev.tp2026.gr13.jeuQuizz.exceptions.JoueurInexistantException;
+//import universite_Paris8.iut.qdev.tp2026.gr13.jeuQuizz.exceptions.NotEnoughQuestionsException;
+
+import java.util.ArrayList;
+
 public interface IServiceSint {
-    /**
-     * Vérifie l'existence d'un pseudo ou valide la création d'un profil.
-     * Le pseudo doit être unique et ne pas commencer par un chiffre.
-     */
-    void traiterUnJoueur(String pseudo) throws IllegalArgumentException;
 
-    /**
-     * Prépare les éléments nécessaires au lancement d'une partie.
-     */
-    Partie preparerLesElementsDeLaPartie(String pseudoJoueur, List<Question> questionnaireChoisi)
-            throws IllegalArgumentException, NotEnoughQuestionsException, JoueurInexistantException;
+    public ElementsPourUnePartieDTO determinerElementsDispoPourPartie();
 
-    /**
-     * Pilote l'enchaînement des questions et calcule le score.
-     */
-    void realiserUnePartie(Partie partie);
 
-    /**
-     * Transmet le score et le temps pour mettre à jour les statistiques.
-     */
-    void mettreAJourLesStats(Partie partieTerminee);
+    public void traiterUnJoueur(String pseudo) throws IllegalArgumentException;
+
+  //public Partie preparerLesElementsDeLaPartie(String pseudoJoueur, ArrayList<Question> questionnaireChoisi) throws IllegalArgumentException, NotEnoughQuestionsException, JoueurInexistantException;
+
+  //  public void realiserUnePartie(Partie partie);
+
+    // public void mettreAJourLesStats(Partie partieTerminee);
+
 }
