@@ -76,8 +76,37 @@ public class SintServiceImpl implements IServiceSint {
                 .findFirst()
                 .orElseThrow(() -> new IllegalArgumentException("Questionnaire introuvable"));
 
-        // PAS DE GESTION DES QUESTIONS ICI (pas dispo)
+        List<QuestionDTO> toutesQuestions = serviceQuestionnaire.getToutesLesQuestions(questionnaire);
 
-        return new PartieDTO(joueur, questionnaire, new ArrayList<>());
+        if (toutesQuestions == null || toutesQuestions.size() < 10) {
+            throw new IllegalArgumentException("Pas assez de questions");
+        }
+
+        // FILTRER PAR DIFFICULTÉ
+        List<QuestionDTO> simples = toutesQuestions.stream()
+                .filter(q -> q.getDifficulte() == 1)
+                .collect(Collectors.toList());
+
+        List<QuestionDTO> intermediaires = toutesQuestions.stream()
+                .filter(q -> q.getDifficulte() == 2)
+                .collect(Collectors.toList());
+
+        List<QuestionDTO> expertes = toutesQuestions.stream()
+                .filter(q -> q.getDifficulte() == 3)
+                .collect(Collectors.toList());
+
+        Collections.shuffle(simples);
+        Collections.shuffle(intermediaires);
+        Collections.shuffle(expertes);
+
+        List<QuestionDTO> selection = new ArrayList<>();
+
+        selection.addAll(simples.stream().limit(3).collect(Collectors.toList()));
+        selection.addAll(intermediaires.stream().limit(3).collect(Collectors.toList()));
+        selection.addAll(expertes.stream().limit(4).collect(Collectors.toList()));
+
+        Collections.shuffle(selection);
+
+        return new PartieDTO(joueur, questionnaire, selection);
     }
 }

@@ -6,9 +6,9 @@ public class PartieDTO {
 
     private JoueurInfosDTO joueur;
     private QuestionnaireInfosDTO questionnaire;
-    private List<Object> questions;
+    private List<QuestionDTO> questions;
 
-    public PartieDTO(JoueurInfosDTO joueur, QuestionnaireInfosDTO questionnaire, List<Object> questions) {
+    public PartieDTO(JoueurInfosDTO joueur, QuestionnaireInfosDTO questionnaire, List<QuestionDTO> questions) {
         this.joueur = joueur;
         this.questionnaire = questionnaire;
         this.questions = questions;
@@ -22,7 +22,7 @@ public class PartieDTO {
         return questionnaire;
     }
 
-    public List<Object> getQuestions() {
+    public List<QuestionDTO> getQuestions() {
         return questions;
     }
 }
