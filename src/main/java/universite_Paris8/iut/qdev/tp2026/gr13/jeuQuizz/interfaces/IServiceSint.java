@@ -1,6 +1,7 @@
 package universite_Paris8.iut.qdev.tp2026.gr13.jeuQuizz.interfaces;
 
 import universite_Paris8.iut.qdev.tp2026.gr13.jeuQuizz.commons.dtos.ElementsPourUnePartieDTO;
+import universite_Paris8.iut.qdev.tp2026.gr13.jeuQuizz.commons.dtos.PartieDTO;
 //import universite_Paris8.iut.qdev.tp2026.gr13.jeuQuizz.models.Partie;
 //import universite_Paris8.iut.qdev.tp2026.gr13.jeuQuizz.models.Question;
 //import universite_Paris8.iut.qdev.tp2026.gr13.jeuQuizz.exceptions.JoueurInexistantException;
@@ -15,7 +16,7 @@ public interface IServiceSint {
 
     public void traiterUnJoueur(String pseudo) throws IllegalArgumentException;
 
-  //public Partie preparerLesElementsDeLaPartie(String pseudoJoueur, ArrayList<Question> questionnaireChoisi) throws IllegalArgumentException, NotEnoughQuestionsException, JoueurInexistantException;
+    PartieDTO preparerLesElementsDeLaPartie(String pseudo, String idQuestionnaire);
 
   //  public void realiserUnePartie(Partie partie);
 

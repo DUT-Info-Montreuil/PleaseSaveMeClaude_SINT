@@ -5,4 +5,5 @@ import java.util.List;
 
 public interface IServiceQuestionnaire {
     List<QuestionnaireInfosDTO> listerQuestionnaires();
+    List<QuestionDTO> getToutesLesQuestions(QuestionnaireInfosDTO questionnaire);
 }
