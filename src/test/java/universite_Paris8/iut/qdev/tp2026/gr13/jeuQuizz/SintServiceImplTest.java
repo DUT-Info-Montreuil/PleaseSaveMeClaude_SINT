@@ -175,7 +175,6 @@ public class SintServiceImplTest {
         assertEquals(10, countDifficile, "Il doit y avoir 10 éléments de niveau difficile");
     }
 
-    // --- Scénarios manquants pour une couverture complète ---
 
     /**
      * Explication : Scénario nominal où tout fonctionne en même temps : 
