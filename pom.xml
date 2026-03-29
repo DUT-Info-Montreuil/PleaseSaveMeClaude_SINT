@@ -43,15 +43,20 @@
 
     <dependency>
       <groupId>universite_Paris8.iut.qdev.tp2026.gr13</groupId>
-      <artifactId>BUT2-R4-02-2026-grp13-PleaseSaveMeClaude-SAPP</artifactId>
+      <artifactId>BUT2-R4-02-2026-grp13-PleaseSaveMeClaude-joueur-SME</artifactId>
       <version>1.0.0-SNAPSHOT</version>
+    </dependency>
+    <dependency>
+    <groupId>org.univ_paris8.iut.montreuil.qdev.tp202x.grX</groupId>
+    <artifactId>questionnaire_sme</artifactId>
+    <version>1.0.0-SNAPSHOT</version>
     </dependency>
     <dependency>
       <groupId>org.mockito</groupId>
       <artifactId>mockito-junit-jupiter</artifactId>
       <version>5.11.0</version>
       <scope>test</scope>
-    </dependency>
+  </dependency>
   </dependencies>
 
   <build>
